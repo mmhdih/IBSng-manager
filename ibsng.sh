@@ -117,7 +117,7 @@ function install_docker_manual() {
     
     # Install Docker Compose
     show_progress 3 $total_steps "Installing Docker Compose..."
-    curl -L "https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    curl -L "https://github.com/docker/compose/releases/download/v5.0.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     chmod +x /usr/local/bin/docker-compose
     
     # Start and enable Docker
