@@ -215,16 +215,16 @@ function download_and_import_image() {
     TEMP_FILE="/tmp/ushkayanet-ibsng.tar"
     
     # Try normal download first
-    if ! curl -L -o "$TEMP_FILE" "$IMAGE_URL"; then
-        echo -e "\n${RED}[!] Download failed - trying with Electro DNS...${NC}"
-        set_electro_dns
-        if ! curl -L -o "$TEMP_FILE" "$IMAGE_URL"; then
-            restore_old_dns
-            echo -e "\n${RED}[!] Failed to download image even with Electro DNS.${NC}"
-            exit 1
-        fi
-        restore_old_dns
-    fi
+   # if ! curl -L -o "$TEMP_FILE" "$IMAGE_URL"; then
+    #    echo -e "\n${RED}[!] Download failed - trying with Electro DNS...${NC}"
+     #   set_electro_dns
+      #  if ! curl -L -o "$TEMP_FILE" "$IMAGE_URL"; then
+       #     restore_old_dns
+        #    echo -e "\n${RED}[!] Failed to download image even with Electro DNS.${NC}"
+         #   exit 1
+        #fi
+        # restore_old_dns
+    #fi
     
     show_progress 2 $total_steps "Importing Docker image..."
     if ! docker load -i "$TEMP_FILE"; then
